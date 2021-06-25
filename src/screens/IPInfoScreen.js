@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
+import GlobalStyles from '../styles/GlobalStyles';
 
 const IPInfoScreen = () => {
-    return <View><Text>Main</Text></View>
+    return <SafeAreaView style={GlobalStyles.droidSafeArea}>
+        <Text>Main</Text>
+    </SafeAreaView>
 };
 
 export default IPInfoScreen;

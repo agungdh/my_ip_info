@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
+import GlobalStyles from '../styles/GlobalStyles';
 
 const AboutScreen = () => {
-    return <View>
+    return <SafeAreaView style={GlobalStyles.droidSafeArea}>
         <Text>About</Text>
-    </View>
+    </SafeAreaView>
 }
 
 export default AboutScreen;
