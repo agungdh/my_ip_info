@@ -4,8 +4,6 @@ import { View, Image, StyleSheet } from 'react-native';
 const Flag = ({countryCode}) => {
     const imgSource = `https://www.countryflags.io/${countryCode}/flat/64.png`;
 
-    console.log({countryCode, imgSource});
-
     return <View>
         <Image style={styles.image} source={{uri: imgSource}} />
     </View>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, View, StyleSheet } from 'react-native';
 import GlobalStyles from '../styles/GlobalStyles';
 import Flag from '../components/Flag';
 import ipinfo from '../apis/ipinfo';
@@ -26,10 +26,20 @@ const IPInfoScreen = () => {
     }
 
     return <SafeAreaView style={GlobalStyles.droidSafeArea}>
-        <Title>{ipInfo.ip}</Title>
-        <Subheading>{ipInfo.org}</Subheading>
-        <Flag countryCode={countryCode} />
+        <View style={styles.container}>
+            <Title>{ipInfo.ip}</Title>
+            <Subheading>{ipInfo.org}</Subheading>
+            <Flag countryCode={countryCode} />
+        </View>
     </SafeAreaView>
 };
+
+const styles = StyleSheet.create({
+    container :{
+        justifyContent: 'center', //Centered vertically
+        alignItems: 'center', // Centered horizontally
+        flex:1
+    }
+});
 
 export default IPInfoScreen;
