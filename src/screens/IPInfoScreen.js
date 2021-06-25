@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, StyleSheet } from 'react-native';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
 import GlobalStyles from '../styles/GlobalStyles';
 import Flag from '../components/Flag';
 import ipinfo from '../apis/ipinfo';
