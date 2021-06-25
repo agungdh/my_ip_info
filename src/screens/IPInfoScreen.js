@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const IPInfoScreen = () => {
-    return <View>Main</View>
+    return <View><Text>Main</Text></View>
 };
 
 export default IPInfoScreen;

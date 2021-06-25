@@ -1,8 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const AboutScreen = () => {
-    return <View>About</View>
+    return <View>
+        <Text>About</Text>
+    </View>
 }
 
 export default AboutScreen;
