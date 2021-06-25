@@ -11,12 +11,14 @@ const IPInfoScreen = () => {
     const [countryCode, setCountryCode] = useState(null);
     const [visible, setVisible] = useState(false);
     const [dialog, setDialog] = useState(false);
+    const [loading, setLoading] = useState(false);
     
-    const showDialog = () => setVisible(true);
     const hideDialog = () => setVisible(false);
 
     const getIpInfo = async () => {
         try {
+            setLoading(true);
+
             const response = await ipinfo.get(`/`);
 
             setIpInfo(response.data);
@@ -29,8 +31,15 @@ const IPInfoScreen = () => {
                 setCountryCode(response.data.country);
             } catch (error) {
                 setVisible(true);
-                setDialog(error.response.data.error);
+
+                if (error.response) {
+                    setDialog(error.response.data.error);
+                } else {
+                    setDialog(error);
+                }
             }
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -53,8 +62,8 @@ const IPInfoScreen = () => {
             </Portal>
             <Title>{ipInfo ? ipInfo.ip : ''}</Title>
             <Subheading>{ipInfo ? ipInfo.org : ''}</Subheading>
-            <Flag countryCode={countryCode} />
-            <Button onPress={getIpInfo}>Refresh</Button>
+            { ipInfo ? (<Flag countryCode={countryCode}/>) : null }
+            <Button loading={loading} icon="refresh" onPress={getIpInfo} mode="contained">Refresh</Button>
         </View>
     </SafeAreaView>
 };
