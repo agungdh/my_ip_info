@@ -4,8 +4,11 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Flag from '../components/Flag';
 import ipinfo from '../apis/ipinfo';
 import { Title, Headline, Subheading  } from 'react-native-paper';
+import {IPINFO_APIKEY} from '@env';
 
 const IPInfoScreen = () => {
+    console.log({IPINFO_APIKEY});
+    
     const [ipInfo, setIpInfo] = useState(null);
     const [countryCode, setCountryCode] = useState(null);
 
