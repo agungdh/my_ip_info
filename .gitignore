@@ -16,3 +16,4 @@ web-build/
 src/configs/env.js
 
 yarn-error.log
+.netlify/state.json
